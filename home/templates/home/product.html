@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+
+
+<section class="blog-header">
+    <div class="container h-100 align-items-center">
+        <div class="row h-100 align-self-center">
+            <div class="col my-auto text-center mh-100">
+                <h2 class="curly text-vivid-green display-4 font-weight-bold">Welcome to our</h2>
+                <h1 class="poppins text-white display-3 font-weight-bold font-italic text-uppercase"
+                    style="margin-top: -30px;">
+                    ONLINE STORE</h1>
+                <h3 class="poppins font-weight-lighter text-white-50 pb-5 smallish">For in-store pickup only!</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12 snipcart-summary">
+            <a href="/store" class="btn btn-primary bg-vivid-green">
+                <i class="fas fa-store"></i>
+                Return to Store
+            </a>
+            <a href="" class="btn btn-primary snipcart-checkout bg-vivid-green">
+                <i class="fas fa-shopping-cart"></i>
+                View cart (<span class="snipcart-total-items">0</span>)
+            </a>
+        </div>
+    </div>
+
+
+    <div class="row py-5">
+        <div class="col-sm-4 col-12">
+            {% image page.image max-300x300 as temp_image %}
+            <img src="{{ temp_image.url }}" alt="" />
+        </div>
+        <div class="col-sm-8 col-12">
+            <h1>
+                {{ page.title }}
+            </h1>
+
+            <p>
+                {{ page.short_description }}
+            </p>
+
+            <p>
+                {% for f in custom_fields %}
+                {% if f.options_array|length > 0 %}
+                <div class="form-group">
+                    <label class="form-label" for="{{ f.name|lower }}">
+                        {{ f.name }}
+                    </label>
+                    <select class="form-select custom-field-select" id="{{ f.name|lower }}"
+                        data-field="{{ forloop.counter }}">
+                        {% for option in f.clean_options_array %}
+                        <option>
+                            {{ option }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </p>
+                
+            <button class="snipcart-add-item btn btn-primary bg-vivid-green" data-item-name="{{ page.title }}"
+                data-item-id="{{ page.sku }}" data-item-url="{{ page.get_full_url }}" data-item-price="{{ page.price }}"
+                data-item-description="{{ page.short_description}}" data-item-image="{{ temp_image.url }}"
+                {% for f in custom_fields %} data-item-custom{{forloop.counter}}-name="{{f.name}}"
+                data-item-custom{{forloop.counter}}-options="{{f.options}}" {% endfor %}>
+                <i class="fas fa-plus"></i>
+                Add to cart
+            </button>
+            <br>
+            <small class="text-black-50">In Stock: {{ page.inventory }}</small>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.custom-field-select').onchange = function (event) {
+            if (event.target.dataset.field) {
+                document.querySelector('.snipcart-add-item')
+                    .dataset['itemCustom' + event.target.dataset.field + 'Value'] = event.target.value;
+            }
+        };
+    }, false);
+</script>
+
+{% endblock %}

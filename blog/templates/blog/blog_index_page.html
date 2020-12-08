@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% comment %} {% load custom_tags %} {% endcomment %}
+
+{% block content %}
+
+<section class="blog-header">
+  <div class="container h-100 align-items-center">
+    <div class="row h-100 align-self-center">
+      <div class="col my-auto text-center mh-100">
+        <h2 class="curly text-vivid-green display-4 font-weight-bold">Welcome to our</h2>
+        <h1 class="poppins text-white display-3 font-weight-bold font-italic text-uppercase" style="margin-top: -30px;">
+          BLOG</h1>
+        <h3 class="poppins font-weight-lighter text-white-50 pb-5 smallish">For tips, tricks, and tutorials!</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pt-5 pb-5">
+  <div class="container">
+    <h3 class="poppins text-center mb-5">The Latest News</h3>
+    <div class="row">
+      <div class="col-sm-3 col-12 bg-light-gray p-2 mb-3">
+        <h5 class="ml-3 mt-2 mb-3"><b>Blog Categories</b></h5>
+        <hr class="pt-0 mt-0">
+        {% for category in categories %}
+          <h6 class="text-muted my-3 ml-3 text-vivid-green">{{ category.name }}</h6>
+        {% endfor %}
+      </div>
+      <div class="col-sm-9 col-12">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              {% for blog in posts %}
+              {% image blog.feed_image fill-290x195 as blog_image%}
+              <div class="col-md-4 mb-3 d-flex">
+                <div class="card flex-fill">
+                  <a href="{% pageurl blog %}"> <img class="img-fluid w-100 h-100 hover-lighten" alt=""
+                      src="{{ blog_image.url }}"></a>
+                  <div class="card-body card-outline pb-1">
+                    <h4 class="card-title">{{ blog.intro }}</h4>
+                    <p class="card-text text-muted">{{ blog.body|richtext|truncatechars_html:50 }}</p>
+                  </div>
+                  <div class="d-flex justify-content-between card-footer card-outline"
+                    style="background-color: white; border-top: none !important;">
+                    <p class="text-muted pb-0 mb-0"><i class="fas fa-calendar-alt text-vivid-green mr-2"
+                        style="font-size: 15px;"></i>{{ blog.date|date:"M Y" }}</p>
+                    <a href="{% pageurl blog %}"><button class="btn p-0 pb-1 text-vivid-green">Read More</button><i
+                        class="fas fa-arrow-circle-right text-vivid-green pl-2" style="font-size: 15px;"></i> </a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

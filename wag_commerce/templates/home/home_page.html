@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+{% image self.banner_image original as img %}
+
+<section class="home-header">
+  <div class="container h-100 align-items-center">
+    <div class="row h-100 pt-5 pt-sm-0">
+      <div class="col-sm-12 col-12 my-auto mh-100 align-self-start text-center">
+        <h2 class="text-vivid-green display-4 font-weight-normal">Hi, I'm Joe Howard</h2>
+        <h1 class="text-white display-4 text-uppercase font-weight-bold" style="margin-top: -10px; line-height: 90%;">
+          I design and build full-stack solutions</h1>
+      </div>
+      <div class="col-sm-12 align-self-end text-center pb-3">
+        <h4 class="text-white font-weight-light">Learn more about what I do</h4>
+        <i class="fa fa-caret-down text-white fa-3x" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="d-flex justify-content-center pt-4 subtleleaves">
+  <!-- subtleleaves class for background-->
+  <div class="container mx-2">
+    <div class="row mt-4 ">
+      <div class="col-sm-6 col-12">
+        <div class="card text-white h-100 mb-3 backgroundset"
+          style="background-image: url('{% static "plant4.jpg" %}')">
+
+          <div class="card-header">
+            <h4 class="card-title text-vivid-green">About Me</h4>
+          </div>
+          <img class="card-img" src="{% static "greenhouse-plants.jpg" %}" alt="Plants" style="opacity: 0;">
+
+          <div class="card-img-overlay">
+            <p class="card-text text-white lead pt-4">While growing up in Woodway, Texas I developed a passion for
+              coding. I'm currently
+              working towards my BS in Computer Science.
+              Plants, cooking, photoshop, 3D printing, and microelectronics are among some of my hobbies. I'm a
+              strong communicator and quick learner of new
+              concepts and technologies.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-12 d-none d-sm-block">
+        <div class="col h-48">
+          <div class="d-flex card text-white h-100 mb-3 backgroundset"
+            style="background-image: url('{% static "plant2.jpg" %}')">
+            {% comment %} <img class="card-img img-responsive h-100" src="{% static "greenhouse-plants.jpg" %}"
+              alt="Plants"> {% endcomment %}
+            <div class="card-header">
+              <h4 class="card-title text-vivid-green">Frontend Design</h4>
+            </div>
+            <div class="card-img-overlay">
+
+              <p class="card-text text-white lead pt-4">I value simple, content-forward designs with an elegant user
+                experience to match.</p>
+            </div>
+          </div>
+          <div class="card text-white h-100 mb-3 backgroundset"
+            style="background-position: center bottom; background-image: url('{% static "plant3.jpg" %}')">
+            {% comment %} <img class="card-img  img-responsive" src="{% static "plant2.jpg" %}" alt="Plants">
+            {% endcomment %}
+            <div class="card-header">
+              <h4 class="card-title text-vivid-green">Software Development</h4>
+            </div>
+            <div class="card-img-overlay">
+              <p class="card-text text-white lead pt-4">I enjoy the lifecycle of software development from start to
+                finish.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+      <h3 class="text-center font-weight-bold">My Recent Work</h3>
+      <br>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Carousel indicators -->
+
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+          <div class="item carousel-item active">
+            <div class="row">
+              <div class="col-sm-4 col-xs-4">
+                <a href="https://greenhousemarketplace.com">
+                  <div class="thumb-wrapper">
+                    <div class="img-box">
+                      <img src="{% static "poinsettia.png" %}" class="img-responsive img-fluid" alt="">
+                    </div>
+                    <div class="thumb-content text-center">
+                      <h4>Greenhouse Marketplace</h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-4 col-xs-4">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="{% static "peterstar.jpg" %}" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content text-center">
+                    <h4>Peterstar White</h4>
+
+                    {% comment %} <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div> {% endcomment %}
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-xs-4">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="{% static "winterrose.jpg" %}" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content text-center">
+                    <h4>Winter Rose</h4>
+
+                    {% comment %} <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                      </ul>
+                    </div> {% endcomment %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="divider-parallax pt-3 mt-5">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      {% for team_member in authors %}
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}"
+        {% if forloop.first %}class="active" {% endif %}></li>
+      {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+      {% for team_member in authors %}
+      {% image team_member.photo fill-125x125 as avatar_image%}
+      <div class="carousel-item {% if forloop.first %} active {% endif %}">
+        <div class="carousel-caption justify-content-center align-items-center text-center">
+          <img class="img-fluid img rounded-circle avatar" src="{{ avatar_image.url }}"
+            alt="{{ team_member.role }} {{ team_member.name }}" role="presentation">
+          <br>
+          <p class="h4 poppins text-white font-weight-bold text-uppercase mt-4 pb-0 mb-0">{{ team_member.name }}</p>
+          <p class="h5 text-vivid-green text-uppercase mt-0 curly">{{ team_member.role }}</p>
+          <blockquote class="blockquote mx-5">
+            <p class="mb-0">{{ team_member.presentation }}<br></p>
+          </blockquote>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+<section class="pt-5 pb-5">
+  <div class="container">
+    <h3 class="poppins text-center mb-5">The Latest News</h3>
+    <div class="row">
+      <div class="col-12">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              {% for blog in page.blogs %}
+              {% image blog.feed_image fill-290x195 as blog_image%}
+              <div class="col-md-4 mb-3 d-flex">
+                <div class="card flex-fill">
+                  <a href="{% pageurl blog %}"> <img class="img-fluid w-100 h-100 hover-lighten"
+                      alt="Navigate to {{ blog.title }}" src="{{ blog_image.url }}"></a>
+                  <div class="card-body card-outline pb-1">
+                    <h4 class="card-title">{{ blog.intro }}</h4>
+                    <p class="card-text text-muted">{{ blog.body|richtext|truncatechars_html:50 }}</p>
+                  </div>
+                  <div class="d-flex justify-content-between card-footer card-outline"
+                    style="background-color: white; border-top: none !important;">
+                    <p class="text-muted pb-0 mb-0"><i class="fas fa-calendar-alt text-vivid-green mr-2"
+                        style="font-size: 15px;"></i>{{ blog.date }}</p>
+                    <a href="{% pageurl blog %}"><button class="btn p-0 pb-1 text-vivid-green">Read More</button><i
+                        class="fas fa-arrow-circle-right text-vivid-green pl-2" style="font-size: 15px;"></i> </a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+
+<section class="blog-header">
+  <div class="container h-100 align-items-center">
+    <div class="row h-100 align-self-center">
+      <div class="col my-auto text-center mh-100">
+        <h2 class="curly text-vivid-green display-4 font-weight-bold">Welcome to our</h2>
+        <h1 class="poppins text-white display-3 font-weight-bold font-italic text-uppercase" style="margin-top: -30px;">
+          ONLINE STORE</h1>
+        <h3 class="poppins font-weight-lighter text-white-50 pb-5 smallish">For in-store pickup only!</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-12 snipcart-summary">
+      <a href="/" class="btn btn-primary bg-vivid-green">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+      <a href="" class="btn btn-primary snipcart-checkout bg-vivid-green">
+        <i class="fas fa-shopping-cart"></i>
+        View cart (<span class="snipcart-total-items">0</span>)
+      </a>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    {% for product in products %}
+    {% image product.image fill-400x400 as product_image%}
+    <div class="col-md-4 mb-3 d-flex">
+      <div class="card flex-fill">
+        <a href="{{ product.get_url }}"> <img class="img-fluid w-100 h-100 hover-lighten" alt=""
+            src="{{ product_image.url }}"></a>
+        <div class="card-body card-outline">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text text-black-50 font-weightlight">{{ product.short_description|truncatechars:80 }}</p>
+        </div>
+        <div class="d-flex justify-content-between card-footer card-outline"
+          style="background-color: white; border-top: none !important;">
+          <div class="rating">
+            <span class="fa fa-stack">
+              <i class="fa fa-star-o fa-stack-1x"></i>
+              <i class="fa fa-star {% if product.star_rating >= 1 %} fa-stack-1x {% else %} fa-stack-x {% endif %}"></i>
+            </span>
+            <span class="fa fa-stack">
+              <i class="fa fa-star-o fa-stack-1x"></i>
+              <i class="fa fa-star {% if product.star_rating >= 2 %} fa-stack-1x {% else %} fa-stack-x {% endif %}"></i>
+            </span>
+            <span class="fa fa-stack">
+              <i class="fa fa-star-o fa-stack-1x"></i>
+              <i class="fa fa-star {% if product.star_rating >= 3 %} fa-stack-1x {% else %} fa-stack-x {% endif %}"></i>
+            </span>
+            <span class="fa fa-stack">
+              <i class="fa fa-star-o fa-stack-1x"></i>
+              <i class="fa fa-star {% if product.star_rating >= 4 %} fa-stack-1x {% else %} fa-stack-x {% endif %}"></i>
+            </span>
+            <span class="fa fa-stack">
+              <i class="fa fa-star-o fa-stack-1x"></i>
+              <i class="fa fa-star {% if product.star_rating >= 5 %} fa-stack-1x {% else %} fa-stack-x {% endif %}"></i>
+            </span>
+          </div>
+          <!-- <p class="text-muted pb-0 mb-0"><i class="fas fa-calendar-alt text-vivid-green mr-2"
+            style="font-size: 15px;"></i>{{ blog.date|date:"M Y" }}</p> -->
+          <a href="{{ product.get_url }}"><button class="btn p-0 pb-1 font-weight-bold">${{ product.price }}</button><i
+              class="fas fa-arrow-circle-right text-vivid-green pl-2" style="font-size: 15px;"></i> </a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+<!-- 
+<div class="card">
+  <div class="card-image">
+      {% image product.image fill-400x200 as tmp_image %}
+      <img src="{{ tmp_image.url }}" alt="" class="img-responsive">
+  </div>
+  <div class="card-header">
+      <a href="{{ product.get_url }}" class="btn btn-primary float-right">
+          <i class="icon icon-plus"></i>
+      </a>
+      <div class="card-title h5">
+          {{ product.title }}
+      </div>
+  </div>
+  <div class="card-body">
+      {{ product.description }}
+  </div>
+</div> -->

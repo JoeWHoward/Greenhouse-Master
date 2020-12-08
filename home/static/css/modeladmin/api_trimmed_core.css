@@ -1,0 +1,181 @@
+
+header {
+    padding-top:1em;
+    padding-bottom:1em;
+    background-color:#007d7e;
+    margin-bottom:2em
+   }
+   header,
+   header a {
+    color:#fff
+   }
+   header h1,
+   header h2 {
+    margin:0;
+    color:#fff
+   }
+   header h1 {
+    padding:.2em 0
+   }
+   header h1.icon:before {
+    width:1em;
+    display:none;
+    margin-right:.4em;
+    font-size:1.5em
+   }
+   .coll > h1 {
+    font-size: 1.5em
+   }
+   header .coll {
+    float:left;
+    margin-right:2em
+   }
+   header .left {
+    float:left
+   }
+   .hasform header .left:first-child {
+    padding-bottom:.5em;
+    float:none
+   }
+   header .right {
+    text-align:right;
+    float:right
+   }
+   header.merged {
+    margin-bottom:0
+   }
+   header.tab-merged {
+    padding-left:50px;
+    padding-right:50px
+   }
+   header.tab-merged .right:last-child {
+    padding-right:0
+   }
+   header.no-border,
+   header.tab-merged {
+    border:0
+   }
+   @media screen and (max-width:49.9375em) {
+    header.no-border,
+    header.tab-merged {
+     padding-left:1.6em;
+     padding-right:1.6em;
+     padding-top:11px
+    }
+    header.no-border .breadcrumb,
+    header.tab-merged .breadcrumb {
+     margin-left:0
+    }
+    header.no-border .nice-padding,
+    header.tab-merged .nice-padding {
+     margin-left:-50px
+    }
+   }
+   header.merged.no-border {
+    padding-bottom:0
+   }
+   header.no-v-padding {
+    padding-top:0;
+    padding-bottom:0
+   }
+   header .button {
+    background-color:#00676a
+   }
+   header .button:hover {
+    background-color:#00585a
+   }
+   header label {
+    border:0;
+    clip:rect(0 0 0 0);
+    height:1px;
+    margin:-1px;
+    overflow:hidden;
+    padding:0;
+    position:absolute;
+    width:1px
+   }
+   header input[type=text],
+   header select {
+    border-width:0
+   }
+   header input[type=text]:focus,
+   header select:focus {
+    background-color:#fff
+   }
+   header .error-message {
+    color:inherit
+   }
+   header .fields {
+    margin-top:-.5em
+   }
+   header .fields li {
+    padding-bottom:0
+   }
+   header .fields .field {
+    padding:0
+   }
+   header .field-content {
+    width:auto;
+    padding:0
+   }
+   @media screen and (min-width:50em) {
+    header {
+     padding-top:1.5em;
+     padding-bottom:1.5em
+    }
+    header .left {
+     float:left;
+     margin-right:0
+    }
+    header .left:first-child {
+     padding-bottom:0;
+     float:left
+    }
+    header .second {
+     clear:none
+    }
+    header .second .left,
+    header .second .right {
+     float:right
+    }
+    header h1.icon:before {
+     display:inline-block
+    }
+    header .col3 {
+     box-sizing:border-box;
+     display:inline;
+     float:left;
+     width:25%;
+     padding-right:1.5%;
+     padding-left:1.5%
+    }
+    header .col3.actionbutton {
+     width:auto
+    }
+    header .col6 {
+     width:50%
+    }
+    header .col6,
+    header .col9 {
+     box-sizing:border-box;
+     display:inline;
+     float:left;
+     padding-right:1.5%;
+     padding-left:1.5%
+    }
+    header .col9 {
+     width:75%
+    }
+   }
+   @media screen and (max-width:49.9375em) {
+    .header-title {
+     padding-left:50px
+    }
+   }
+   .header-title-icon {
+    width:1.5em;
+    height:1.5em;
+    vertical-align:text-top;
+    margin-right:.5em
+   }
+

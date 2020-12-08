@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+
+{% load wagtailcore_tags %}
+
+
+{% block content %}
+
+    <div class="col">
+        <h1>{{ page.title }}</h1>
+
+        <div class="intro">{{ page.intro|richtext }}</div>
+
+        <div class="col">
+        {% for post in page.get_children %}
+            <div class="col">
+            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+            {{ post.specific.intro }}
+            </div>
+        {% endfor %}
+        </div>
+
+        <p><a href="/">Back to home</a></p>
+    </div>
+
+{% endblock %}

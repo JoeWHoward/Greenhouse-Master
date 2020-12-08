@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% comment %} {% load custom_tags %} {% endcomment %}
+
+{% block content %}
+
+{% image page.feed_image original as feed_image%}
+{% image page.author.photo fill-125x125 as avatar_image%}
+
+<section class="blog-post-header" style="background-image: url('{{ feed_image.url }}')">
+  <div class="h-100 w-100 bg-darken">
+    <div class="container h-100 align-items-center">
+      <div class="row h-100 align-self-center">
+        <div class="col my-auto text-center mh-100">
+          <h2 class="curly text-vivid-green display-4 font-weight-bold">{{ page.date }}</h2>
+          <h1 class="poppins text-white display-3 font-weight-bold font-italic text-uppercase"
+            style="margin-top: -30px;">
+            {{ page.title }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-12 bg-light-gray p-2 mb-3">
+        <h5 class="ml-3 mt-2 mb-3"><b>Blog Categories</b></h5>
+        <hr class="pt-0 mt-0">
+        {% for category in all_categories %}
+        <h6 class="text-muted my-3 ml-3 text-vivid-green"><a href="" class="text-vivid-green">{{ category.name }}</a>
+        </h6>
+        {% endfor %}
+        <br>
+        <a href="{% pageurl parent_page %}" class="my-2 text-muted" style="position: absolute; bottom: 0;">Return to
+          blog index...</a>
+      </div>
+      <div class="col-sm-9 col-12">
+        <h3 class="poppins text-center mb-5">{{page.intro}}</h3>
+        {{ page.body|richtext }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 px-5 bg-light-gray">
+  <div class="row d-none d-sm-flex">
+    <div class="col-12 col-sm-3">
+      <img class="float-right img-fluid img rounded-circle avatar" src="{{ avatar_image.url }}">
+    </div>
+    <div class="col-12 col-sm-9 ">
+      <p class="h4 poppins text-black font-weight-bold text-uppercase">{{ page.author.name }}</p>
+      <p class="h5 text-vivid-green text-uppercase curly">{{ page.author.role }}</p>
+      <blockquote class="blockquote" style="border-left: 3px solid #80b435;padding-left: 10px;">
+        <p class="mb-0">{{ page.author.presentation }}</p>
+      </blockquote>
+    </div>
+  </div>
+  <div class="row d-flex d-sm-none">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <img class="img-fluid img rounded-circle avatar" src="{{ avatar_image.url }}">
+    </div>
+    <div class="col-12">
+      <div class="col-12">
+        <p class="h4 poppins text-black font-weight-bold text-uppercase text-center">{{ page.author.name }}</p>
+      </div>
+      <div class="col-12">
+        <p class="h5 text-vivid-green text-uppercase curly text-center">{{ page.author.role }}</p>
+      </div>
+      <div class="col-12">
+        <blockquote class="blockquote text-center" style="border-left: 3px solid #80b435;padding-left: 10px;">
+          <p class="mb-0">{{ page.author.presentation }}</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

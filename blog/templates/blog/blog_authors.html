@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load custom_tags %}
+
+{% load wagtailcore_tags %}
+{% comment %} custom_tags {% endcomment %}
+
+{% block content %}
+
+    <container>
+        <div class="container">
+            <h2> Meet our authors </h2>
+
+            <div class="row mb-10">
+            {% for a in authors %}
+
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div></div>
+                        <div class="d-flex align-items-center mt-3">
+                          {% image a.photo width-400 class="avatar" id="bar" %}
+                          <div class="ml-1">
+                            <span class="text-small">{{ a.name }}</span>
+                          </div>
+                        </div>
+
+                        <div></div>
+
+                        <div class="col-md-10">
+                            <p class="flex-grow-1">  {{ a.presentation|richtext }} </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+            </div>
+
+        </div>
+    </container>
+
+{% endblock %}
