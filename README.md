@@ -13,7 +13,6 @@ Greenhouse Master is built from Django, Django Rest Framework, Wagtail, Snipcart
 * Easily manage featured products, team members, and blog posts
 * Powerful integrated search using ElasticSearch
 * Generate keyword-friendly SEO content using a "prefix" and an ML model trained on over 15mb of online industry-related data (using GPT-2)
-* Receive email and text notifications when the temperature and humidity reach beyond a predetermined threshold
 
 
 ## Getting Started
