@@ -26,7 +26,9 @@ To get started, run the following in a virtual environment:
 
 ### Usage
 The default username is `admin` with a password of `admin`.
-The admin login page is located at `/admin/`
+
+The admin login page is located at `/admin/`.
+
 You will need to update the Snipcart API key located in the Wagtail dashboard under Settings > Snipcart Settings for the shopping cart functionality to work.
 
 # Discussion of Technologies Used
