@@ -1,1 +1,1 @@
-web: python manage.py runserver localhost
+web: gunicorn wag_commerce.wsgi
