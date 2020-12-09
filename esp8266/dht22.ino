@@ -69,7 +69,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 unsigned long currentMillis = 60001; //Set so temperature's read on first scan of program
 unsigned long previousMillis = 0;
-unsigned long interval = 10000;
+unsigned long interval = 1800000;
 
 const char* ssid = "WIFINETWORK"
 const char* password = "WIFIPASSWORD"

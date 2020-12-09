@@ -6,7 +6,7 @@
 .home-header {
     background-image: url("../headerbg.jpg");
     background-size: cover;
-    height: 100vh;
+    height: 60vh;
     background-position: center;
     background-repeat: no-repeat;
     top: 0;
@@ -74,22 +74,21 @@
 .poppins {
     font-family: Poppins;
 }
-
 .text-vivid-green {
-    color: #e1c027;
+    color: #80b435;
 }
 
 .bg-vivid-green {
-    background-color: #e1c027;
-}
-
-.bg-light-gray {
-    background-color: #f9f9f9;
+    background-color: #80b435;
 }
 
 .bg-vivid-green:hover {
     background-color: #fff;
-    color: #d6b523;
+    color: #80b435;
+}
+
+.bg-light-gray {
+    background-color: #f9f9f9;
 }
 
 .backgroundset {

@@ -7,142 +7,142 @@
 {% image self.banner_image original as img %}
 
 <section class="home-header">
-  <div class="container h-100 align-items-center">
-    <div class="row h-100 pt-5 pt-sm-0">
-      <div class="col-sm-12 col-12 my-auto mh-100 align-self-start text-center">
-        <h2 class="text-vivid-green display-4 font-weight-normal">Hi, I'm Joe Howard</h2>
-        <h1 class="text-white display-4 text-uppercase font-weight-bold" style="margin-top: -10px; line-height: 90%;">
-          I design and build full-stack solutions</h1>
-      </div>
-      <div class="col-sm-12 align-self-end text-center pb-3">
-        <h4 class="text-white font-weight-light">Learn more about what I do</h4>
-        <i class="fa fa-caret-down text-white fa-3x" aria-hidden="true"></i>
+    <div class="container h-100 align-items-center">
+      <div class="row h-100 align-self-center">
+        <div class="col my-auto text-center mh-100">
+          <h2 class="curly text-vivid-green display-4 font-weight-bold">We love your business!</h2>
+          <h1 class="poppins text-white display-3 font-weight-bold font-italic text-uppercase" style="margin-top: -30px;">COME SHOP TODAY</h1>
+          <h3 class="poppins font-weight-lighter text-white-50 pb-5 smallish">Over 3000 plants with great offers!</h3>
+          <a href="" class="btn-primary px-3 py-2 bg-vivid-green">Click Me!</a>
+        </div>
       </div>
     </div>
-  </div>
 </section>
-<section class="d-flex justify-content-center pt-4 subtleleaves">
-  <!-- subtleleaves class for background-->
+<section class="d-flex justify-content-center pt-4"> <!-- subtleleaves class for background-->
   <div class="container mx-2">
     <div class="row mt-4 ">
       <div class="col-sm-6 col-12">
-        <div class="card text-white h-100 mb-3 backgroundset"
-          style="background-image: url('{% static "plant4.jpg" %}')">
-
-          <div class="card-header">
-            <h4 class="card-title text-vivid-green">About Me</h4>
-          </div>
+        <div class="card text-white h-100 mb-3 backgroundset" style="background-image: url('{% static "plant4.jpg" %}')">
           <img class="card-img" src="{% static "greenhouse-plants.jpg" %}" alt="Plants" style="opacity: 0;">
-
           <div class="card-img-overlay">
-            <p class="card-text text-white lead pt-4">While growing up in Woodway, Texas I developed a passion for
-              coding. I'm currently
-              working towards my BS in Computer Science.
-              Plants, cooking, photoshop, 3D printing, and microelectronics are among some of my hobbies. I'm a
-              strong communicator and quick learner of new
-              concepts and technologies.</p>
+            <h5 class="card-title text-info font-weight-bold align-middle">Sustainability is Our Passion</h5>
+            <p class="card-text text-primary lead">We strive to be sustainable in<br> all aspects of our work.</p>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-12 d-none d-sm-block">
-        <div class="col h-48">
-          <div class="d-flex card text-white h-100 mb-3 backgroundset"
-            style="background-image: url('{% static "plant2.jpg" %}')">
-            {% comment %} <img class="card-img img-responsive h-100" src="{% static "greenhouse-plants.jpg" %}"
-              alt="Plants"> {% endcomment %}
-            <div class="card-header">
-              <h4 class="card-title text-vivid-green">Frontend Design</h4>
+          <div class="col h-48">
+            <div class="d-flex card text-white h-100 mb-3 backgroundset" style="background-image: url('{% static "plant3.jpg" %}')">
+              {% comment %} <img class="card-img img-responsive h-100" src="{% static "greenhouse-plants.jpg" %}" alt="Plants"> {% endcomment %}
+              <div class="card-img-overlay">
+                <h5 class="card-title text-info font-weight-bold">The Plant Experts</h5>
+                <p class="card-text text-primary lead">We'll answer any questions <br>you have!</p>
+              </div>
             </div>
-            <div class="card-img-overlay">
-
-              <p class="card-text text-white lead pt-4">I value simple, content-forward designs with an elegant user
-                experience to match.</p>
+            <div class="card text-white h-100 mb-3 backgroundset" style="background-position: center bottom; background-image: url('{% static "plant2.jpg" %}')">
+              {% comment %} <img class="card-img  img-responsive" src="{% static "plant2.jpg" %}" alt="Plants"> {% endcomment %}
+              <div class="card-img-overlay">
+                <h5 class="card-title text-info font-weight-bold">Modern Gardening <br>Products</h5>
+                <p class="card-text text-primary lead">Rest assured, we have the best.</p>
+              </div>
             </div>
-          </div>
-          <div class="card text-white h-100 mb-3 backgroundset"
-            style="background-position: center bottom; background-image: url('{% static "plant3.jpg" %}')">
-            {% comment %} <img class="card-img  img-responsive" src="{% static "plant2.jpg" %}" alt="Plants">
-            {% endcomment %}
-            <div class="card-header">
-              <h4 class="card-title text-vivid-green">Software Development</h4>
-            </div>
-            <div class="card-img-overlay">
-              <p class="card-text text-white lead pt-4">I enjoy the lifecycle of software development from start to
-                finish.
-              </p>
-            </div>
-          </div>
 
         </div>
       </div>
     </div>
     <div class="row mt-5 justify-content-center">
-      <h3 class="text-center font-weight-bold">My Recent Work</h3>
+      <h3 class="text-center font-weight-bold">Featured Products</h3>
       <br>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-        <!-- Carousel indicators -->
-
-        <!-- Wrapper for carousel items -->
-        <div class="carousel-inner">
-          <div class="item carousel-item active">
-            <div class="row">
-              <div class="col-sm-4 col-xs-4">
-                <a href="https://greenhousemarketplace.com">
-                  <div class="thumb-wrapper">
-                    <div class="img-box">
-                      <img src="{% static "poinsettia.png" %}" class="img-responsive img-fluid" alt="">
-                    </div>
-                    <div class="thumb-content text-center">
-                      <h4>Greenhouse Marketplace</h4>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-sm-4 col-xs-4">
-                <div class="thumb-wrapper">
-                  <div class="img-box">
-                    <img src="{% static "peterstar.jpg" %}" class="img-responsive img-fluid" alt="">
-                  </div>
-                  <div class="thumb-content text-center">
-                    <h4>Peterstar White</h4>
-
-                    {% comment %} <div class="star-rating">
-                      <ul class="list-inline">
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                      </ul>
-                    </div> {% endcomment %}
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 col-xs-4">
-                <div class="thumb-wrapper">
-                  <div class="img-box">
-                    <img src="{% static "winterrose.jpg" %}" class="img-responsive img-fluid" alt="">
-                  </div>
-                  <div class="thumb-content text-center">
-                    <h4>Winter Rose</h4>
-
-                    {% comment %} <div class="star-rating">
-                      <ul class="list-inline">
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-                      </ul>
-                    </div> {% endcomment %}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+  
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+				<div class="item carousel-item active">
+					<div class="row">
+						<div class="col-sm-4 col-xs-4">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="{% static "poinsettia.jpg" %}" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content text-center">
+									<h4>Jubilee Red</h4>
+									
+									{% comment %} <div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div> {% endcomment %}
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-4 col-xs-4">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="{% static "peterstar.jpg" %}" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content text-center">
+									<h4>Peterstar White</h4>
+									
+									{% comment %} <div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div> {% endcomment %}
+								</div>						
+							</div>
+						</div>		
+						<div class="col-sm-4 col-xs-4">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="{% static "winterrose.jpg" %}" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content text-center">
+									<h4>Winter Rose</h4>
+									
+									{% comment %} <div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+										</ul>
+									</div> {% endcomment %}
+								</div>						
+							</div>
+						</div>								
+					</div>
+				</div>
+			</div>
+		</div>
+    <hr class="mt-5">
+    <div class="row text-center">
+      <div class="services col-md-4 col-sm-6 mt-5">
+        <div class="mb-2"><a href="#" class="no-text-decoration"><i class="icon-price-tags text-vivid-green"></i></a></div>
+        <h5 class="sub_title my-2">Craft Marketplace</h5>
+        <p class="text-muted">At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui.</p>
+      </div>
+      <div class="services col-md-4 col-sm-6 mt-5">
+        <div class="mb-2"><a href="#" class="no-text-decoration"><i class="icon-leaf text-vivid-green"></i></a></div>
+        <h5 class="sub_title my-2">Nursery</h5>
+        <p class="text-muted">At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui.</p>
+      </div>
+      <div class="services col-md-4 col-sm-6 mt-5">
+        <div class="mb-2"><a href="#" class="no-text-decoration"><i class="icon-droplet text-vivid-green"></i></a></div>
+        <h5 class="sub_title my-2">Landscaping Services</h5>
+        <p class="text-muted">At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui.</p>
       </div>
     </div>
+  </div>
 </section>
 <section class="divider-parallax pt-3 mt-5">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

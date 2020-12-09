@@ -165,7 +165,7 @@ WAGTAIL_SITE_NAME = "wag_commerce"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://greenhousemarketplace.com:8000'
+BASE_URL = '127.0.0.1:8000'
 
 INTERNAL_IPS = [
     '127.0.0.1',

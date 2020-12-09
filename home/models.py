@@ -107,6 +107,7 @@ class Product(Page):
         ImageChooserPanel('image'),
         FieldPanel('short_description'),
         InlinePanel('custom_fields', label='Custom fields'),
+        FieldPanel('inventory'),
     ]
 
 class ProductCustomField(Orderable):
