@@ -13,8 +13,8 @@ class ProductAdmin(ThumbnailMixin, ModelAdmin):
     menu_order = 290
     add_to_settings_menu = False
     exclude_from_explorer = False
-    list_display = ('__str__', 'admin_thumb', 'image', 'price', 'inventory')
+    list_display = ('__str__', 'admin_thumb', 'price', 'inventory')
     thumb_image_fieldname = 'image'
-    
+
 
 modeladmin_register(ProductAdmin)
