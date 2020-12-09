@@ -12,7 +12,7 @@ class TempHumRecordSerializer(serializers.ModelSerializer):
     
 
     # TODO: implement some more rigorous validation/error handling here
-    def to_internal_value(self, data): # Handling data validation by lazily casting the JSON string output from ESP to float
+    def to_internal_value(self, data): # Handling data validation by lazily casting the JSON string output from string to float
         values = super().to_internal_value(data)
         values['temp'] = float(data['temp'])
         values['humidity'] = float(data['humidity'])
