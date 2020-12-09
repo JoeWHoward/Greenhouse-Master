@@ -66,6 +66,7 @@ MIDDLEWARE = [
 
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'wag_commerce.urls'
@@ -165,7 +166,7 @@ WAGTAIL_SITE_NAME = "wag_commerce"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = '127.0.0.1:8000'
+BASE_URL = 'greenhouse-master-demo.herokuapp.com/'
 
 INTERNAL_IPS = [
     '127.0.0.1',
