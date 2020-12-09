@@ -17,6 +17,7 @@ Greenhouse Master is built from Django, Django Rest Framework, Wagtail, Snipcart
 
 ## Getting Started
 Greenhouse Master works with Python 3 on any platform.
+[Demo This Project Here](https://greenhouse-master-demo.herokuapp.com/)
 ### Installation
 To get started, run the following in a virtual environment:
 1. `git clone https://github.com/JoeWHoward/Greenhouse-Master`
