@@ -39,7 +39,7 @@ Django's admin dashboard exists as a separate entity from the Wagtail dashboard,
 
 Given the role of Wagtail CMS in this project, I was not keen to consolidate the functionality exclusively into the Django interface, so I instead opted for Wagtail.
 #### What did I learn?
-For the temperature and humidity logging, I opted for a Django-inherited model class as opposed to another `Page` class.  The reason for this being that the Page class obscures the intent for temp/hum logs.  Since I opted to go for a Django-based class and utilize that within Wagtail's admin interface, this meant overriding Wagtail's ModelAdmin (separate from Django's ModelAdmin).  Overriding the ModelAdmin's IndexView template was a relatively easy process, with a new directory created in api/templates/modeladmin/api/temphumrecord/index.html created from the default version.  This allowed me to display the relevant temperature information in an easy-to-use way.  While overriding the view, I utilized Wagtail's WMABaseView, which has a bunch of helpers that are common throughout all Wagtail views like meta_title, page_title, a context helper, and so on.
+For the temperature and humidity logging, I opted for a Django-inherited model class as opposed to another `Page` class.  The reason for this being that the Page class obscures the intent for temp/hum logs.  Since I opted to go for a Django-based class and utilize that within Wagtail's admin interface, this meant overriding Wagtail's ModelAdmin (separate from Django's ModelAdmin).  Overriding the ModelAdmin's IndexView template was a relatively easy process, with a new directory created in [api/templates/modeladmin/api/temphumrecord/index.html](https://github.com/JoeWHoward/Greenhouse-Master/blob/master/api/templates/modeladmin/api/temphumrecord/index.html) created from the default version.  This allowed me to display the relevant temperature information in an easy-to-use way.  While overriding the view, I utilized Wagtail's WMABaseView, which has a bunch of helpers that are common throughout all Wagtail views like meta_title, page_title, a context helper, and so on.
 #### Next Steps
 The next step will be to integrate [Django-Vue](https://github.com/maximdeclercq/django-vue) within my admin pages to eliminate Chart.js and to serve a responsive, reactive data dashboard to the user.
 
@@ -64,7 +64,7 @@ The next step will be to add an authentication method, likely in the form of a s
 ## ESP8266
 [ESP8266 Microprocessor](https://github.com/esp8266/Arduino) is a small, WiFi enabled microprocessor powered by C.  This chip is commonly embedded on development boards, in my case I used the [NodeMCU](https://github.com/nodemcu/nodemcu-firmware).
 ### Electronics
-I utilized ArduinoJSON and a DHT22 temperature and humidity sensor to read and monitor temp/hum levels in a given location (greenhouse).  With ArduinoJSON, I POST a request containing the current temp/humidity every thirty minutes to Django Rest Framework's API endpoint /api/dht/publish.
+I utilized ArduinoJSON and a DHT22 temperature and humidity sensor to read and monitor temp/hum levels in a given location (greenhouse).  With ArduinoJSON, I POST a request containing the current temp/humidity every thirty minutes to Django Rest Framework's API endpoint [/api/dht/publish](https://github.com/JoeWHoward/Greenhouse-Master/blob/master/api/serializers.py).
 #### What did I learn?
 I learned how to interface with microelectronics and the DHT-22, how to interact with HTTP requests from the ESP8266, and how to package and POST JSON data to an API endpoint.
 #### Next Steps
@@ -73,7 +73,7 @@ The next step, as noted above, will be to add a secret key that is posted alongs
 ## Snipcart
 [Snipcart](https://snipcart.com) is a easy-to-use cart, storefront, and inventorying platform.
 ### Details
-Snipcart can automatically populate their service based on your product/storefront webpage.  There simply needs to be the correct placement of tags and indicators to tell Snipcart what to look for.  After this is set up properly (see:  /home/templates/home/product.html) Snipcart will auto-populate relevant product data in their service.
+Snipcart can automatically populate their service based on your product/storefront webpage.  There simply needs to be the correct placement of tags and indicators to tell Snipcart what to look for.  After this is set up properly (see:  [/home/templates/home/product.html](https://github.com/JoeWHoward/Greenhouse-Master/blob/master/home/templates/home/product.html)) Snipcart will auto-populate relevant product data in their service.
 #### What did I learn?
 To be frank, not much other than about how to interact with Snipcart's, admittedly easy, interface.  It is well documented and explained, with an outdated but still useful [Wagtail specific demo](https://snipcart.com/blog/django-ecommerce-tutorial-wagtail-cms).
 #### Next Steps
